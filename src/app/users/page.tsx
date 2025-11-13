@@ -1,30 +1,30 @@
- 
- async function getstaticprops() {
+
+async function getstaticprops() {
     const res = await fetch("https://jsonplaceholder.typicode.com/users",
-        {cache : "force-cache",})
-        
-        const data = await res.json()
-        return data
-    }
+        { cache: "force-cache", })
+
+    const data = await res.json()
+    return data
+}
 
 
-    export default async function Users(){
-        const users= await getstaticprops()
+export default async function Users() {
+    const users = await getstaticprops()
 
-    return(
+    return (
         <div>
             <ul>
-                {users.map((user:any)=>(
+                {users.map((user: any) => (
                     <li key={user.id}>
-                        
+
                         <p>Name : {user.name}</p>
                         <p>email : {user.email}</p>
                         <p>username : {user.username}</p>
                         <h1>haii</h1>
-                        </li>
+                    </li>
                 ))}
             </ul>
         </div>
     )
-    }
+}
 
